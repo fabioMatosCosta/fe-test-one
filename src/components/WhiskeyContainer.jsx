@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link} from "react-router-dom"
 
 class WhiskeyContainer extends Component {
     constructor(props) {
@@ -12,7 +13,10 @@ class WhiskeyContainer extends Component {
     render() {
         return (
             <div>
-                
+                <Link to= {`${this.props.uri}`}>
+                    <p>{this.props.name}</p>
+                    <img src={require (`../assets/${this.props.image}`)} alt={this.props.name}/>
+                </Link>
             </div>
         )
     }
