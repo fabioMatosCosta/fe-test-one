@@ -14,8 +14,11 @@ class Home extends Component {
         this.state = {
             wh: [],
             art: [],
-            regions: []
+            regions: [],
+            filteredWh: [],
+            filteredRegions: []
         }
+        this.toggleRegion = this.toggleRegion.bind(this);
     }
 
     getRegions(){
@@ -25,8 +28,25 @@ class Home extends Component {
             regions.push(_.capitalize(uniqueRegions[i].region))
         }
         this.setState({
-            regions: regions
+            regions: regions,
+            filteredRegions: regions
         })
+    }
+
+    toggleRegion(clickedRegion){
+        if(clickedRegion === "All"){
+            this.setState({
+                filteredWh: this.state.wh
+            })
+        }else{
+            let whCopy = [...this.state.wh]
+            let fltrWh = whCopy.filter(function(whiskey){
+                return whiskey.region === clickedRegion.toLowerCase()
+            })
+            this.setState({
+                filteredWh: fltrWh
+            })
+        }
     }
 
 
@@ -34,6 +54,7 @@ class Home extends Component {
         this.setState({
             wh: whiskies,
             art: articles,
+            filteredWh: whiskies
         }, this.getRegions)
     }
 
@@ -46,12 +67,12 @@ class Home extends Component {
                 <div>
                     {this.state.regions.map((region, index)=>{
                         return(
-                            <button key = {index}>{region}</button>
+                            <button key = {index} onClick={this.toggleRegion.bind(this,region)}>{region}</button>
                         )}
                     )}
                 </div>
                 <div>
-                    {this.state.wh.map((w, index)=>{
+                    {this.state.filteredWh.map((w, index)=>{
                         return(
                             <WhiskeyContainer
                                 key = {index}
