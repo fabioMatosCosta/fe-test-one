@@ -15,6 +15,7 @@ class ArticleContainer extends Component {
                 <a href={this.props.url} target="_blank" rel="noopener noreferrer">
                     <h2>{this.props.title}</h2>
                     <p>{this.props.teaser}</p>
+                    <img src={require (`../assets/${this.props.image}`)} alt=""/>
                 </a>
             </div>
         )
