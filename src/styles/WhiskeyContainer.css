@@ -3,12 +3,8 @@
     height: 544px;
     display: flex;
     align-items: flex-end;
-    background-color: blue;
+    background-color: gray;
     /* background: url('../assets/card-bg.svg'); */
-}
-
-.bottle {
-    
 }
 
 .bottle img{

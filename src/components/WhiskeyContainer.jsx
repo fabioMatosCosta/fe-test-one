@@ -13,7 +13,32 @@ class WhiskeyContainer extends Component {
         }
     }
 
-
+    getStyle(region){
+        let style = {};
+        switch(region){
+            case 'island':
+                style = {'backgroundImage': 'linear-gradient(to right, #D71E44 , #9E1B34)'};
+                break;
+            case'islay':
+                style = {'backgroundImage': 'linear-gradient(to right, #A5238E , #6E2671)'};
+                break;
+            case 'highlands':
+                style={'backgroundImage': 'linear-gradient(to right, #563494 , #322773)'};
+                break;
+            case 'lowlands':
+                style={'backgroundImage': 'linear-gradient(to right, #O663AE , #174272)'};
+                break;
+            case 'speyside':
+                style={'backgroundImage': 'linear-gradient(to right, #1AB467 , #007B46)'};
+                break;
+            case 'campbeltown':
+                style={'backgroundImage': 'linear-gradient(to right, #F3B41B , #D29D2A)'};
+                break;
+            default:
+                style={}
+        }
+        return style
+    }
 
     render() {
         return (
@@ -27,7 +52,7 @@ class WhiskeyContainer extends Component {
                                 <h3 className = "wh-name">${this.props.cost}</h3>
                             </div>
                             <div className ="notes-container">
-                            <div className ="wh-notes">
+                            <div style = {this.getStyle(this.props.region)}className ="wh-notes">
                                 {this.props.notes.map((note, index)=>{
                                     return(
                                         <p className="note" key = {index}>{_.capitalize(note)}</p>
