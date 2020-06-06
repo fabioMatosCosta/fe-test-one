@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import {Link} from "react-router-dom"
 import '../styles/WhiskeyContainer.css'
+var _ = require('lodash')
+
 
 class WhiskeyContainer extends Component {
     constructor(props) {
@@ -15,25 +17,28 @@ class WhiskeyContainer extends Component {
 
     render() {
         return (
-            <div className = "whiskeyContainer container column is-one-third is-vcentered">
+            <div className = "container column is-one-third">
                 <Link to= {`${this.props.uri}`}>
-                    <div className = "columns">
-                        <div className = "column">
-                            <div>
-                                <h3 className ="wh-name">{this.props.name}</h3>
-                                <p>{this.props.region}</p>
-                                <h3>${this.props.cost}</h3>
+                    <div className ="whiskeyContainer">
+                        <div className ="wh-info">
+                            <div className ="wh-text">
+                                <h3 className ="wh-name">{_.capitalize(this.props.name)}</h3>
+                                <p className ="wh-region">{_.capitalize(this.props.region)} Region</p>
+                                <h3 className = "wh-name">${this.props.cost}</h3>
                             </div>
-                            <div className ="columns">
+                            <div className ="notes-container">
+                            <div className ="wh-notes">
                                 {this.props.notes.map((note, index)=>{
                                     return(
-                                        <p className="column"key = {index}>{note}</p>
+                                        <p className="note" key = {index}>{_.capitalize(note)}</p>
                                     )}
                                 )}
                             </div>
+
+                            </div>
                         </div>
-                        <div className = "column">
-                            <img className = "bottle is-overlay is-relative" src={require (`../assets/${this.props.image}`)} alt={this.props.name}/>
+                        <div className ="bottle">
+                            <img src={require (`../assets/${this.props.image}`)} alt={this.props.name}/>
                         </div>
                     </div>
                 </Link>
