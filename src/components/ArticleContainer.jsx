@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import '../styles/ArticleContainer.css'
 
 class ArticleContainer extends Component {
     constructor(props) {
@@ -11,11 +12,24 @@ class ArticleContainer extends Component {
 
     render() {
         return (
-            <div>
+            <div className = "container">
                 <a href={this.props.url} target="_blank" rel="noopener noreferrer">
-                    <h2>{this.props.title}</h2>
-                    <p>{this.props.teaser}</p>
-                    <img src={require (`../assets/${this.props.image}`)} alt=""/>
+                    <div className= "image">
+                        <img className = "article-img" src={require (`../assets/${this.props.image}`)} alt=""/>
+                    </div>
+                    <div className = "is-overlay columns has-text-left text-container article-text">
+                        <div className ="column article">
+                            <div className="columns">
+                                <div className ="column is-four-fifths">
+                                    <h2 className="article-title">{this.props.title.toUpperCase()}</h2>
+
+                                </div>
+                                <div className="column"></div>
+                            </div>
+                            <p className ="article-teaser">{this.props.teaser}</p>
+                        </div>
+                        <div className ="column"></div>
+                    </div>
                 </a>
             </div>
         )

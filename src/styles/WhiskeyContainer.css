@@ -1,3 +1,14 @@
 .whiskeyContainer {
     background-image: url('../assets/card-bg.svg') no-repeat;
+    padding: 5px;
+    height: 544px;
+}
+
+.bottle {
+    width: 160px;
+}
+
+.wh-name {
+    font-size: 1.7rem;
+    font-weight: bold;
 }

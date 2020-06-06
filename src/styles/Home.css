@@ -1,3 +1,10 @@
-img {
-    width: 160px;
+.wh-title {
+    font-weight: bold;
+    font-size: 4.5rem;
+    font-style: italic;
+    color: black;
+}
+
+.whiskeys {
+    padding-top: 30px;
 }

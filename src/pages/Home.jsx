@@ -62,9 +62,12 @@ class Home extends Component {
         return (
             <div>
                 <div className="container">
-                    <div>
-                        <h1>WHISKEY SELECTION</h1>
-                    </div>
+                    <section className = "hero">
+                        <div className = "hero-body">
+                            <h1 className ="wh-title">WHISKEY SELECTION</h1>
+                        </div>
+
+                    </section>
                     <div className = "buttons is-centered">
                         {this.state.regions.map((region, index)=>{
                             return(
@@ -73,7 +76,7 @@ class Home extends Component {
                         )}
                     </div>
                 </div>
-                <div className = "columns is-multiline">
+                <div className = "whiskeys columns is-multiline">
                     {this.state.filteredWh.map((w, index)=>{
                         return(
                             <WhiskeyContainer

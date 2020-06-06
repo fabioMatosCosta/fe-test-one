@@ -1,0 +1,22 @@
+.text-container{
+    padding: 50px;
+}
+
+.article-title {
+    font-size: 3.4rem;
+    font-style: italic;
+    color: white;
+
+}
+
+.article-teaser {
+    color: white;
+}
+.article-text {
+    display: flex;
+    align-items: flex-end;
+}
+
+.article-img {
+    filter: brightness(15%);
+}
