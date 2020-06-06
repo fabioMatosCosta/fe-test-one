@@ -33,7 +33,7 @@
 
 .wh-region {
     font-size: 18px;
-    color: lightgray;
+    color: gray;
     padding-bottom: 10px;
 }
 
@@ -71,5 +71,5 @@
     width: 50px;
     position: absolute;
     bottom: 530px;
-    left: 28vw;
+    left: 27vw;
 }
