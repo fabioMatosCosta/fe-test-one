@@ -7,16 +7,31 @@ class WhiskeyContainer extends Component {
         super(props)
 
         this.state = {
-                
+
         }
     }
 
+
+
     render() {
         return (
-            <div className = "whiskeyContainer">
+            <div className = "whiskeyContainer column is-one-third">
                 <Link to= {`${this.props.uri}`}>
-                    <p>{this.props.name}</p>
-                    <img src={require (`../assets/${this.props.image}`)} alt={this.props.name}/>
+                    <div>
+                        <h3>{this.props.name}</h3>
+                        <p>{this.props.region}</p>
+                        <h3>{this.props.cost}</h3>
+                    </div>
+                    <div>
+                        {this.props.notes.map((note, index)=>{
+                            return(
+                                <p key = {index}>{note}</p>
+                            )}
+                        )}
+                    </div>
+                    <div>
+                        <img src={require (`../assets/${this.props.image}`)} alt={this.props.name}/>
+                    </div>
                 </Link>
             </div>
         )

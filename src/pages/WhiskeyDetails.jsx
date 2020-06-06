@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 class WhiskeyDetails extends Component {
     constructor(props) {
@@ -12,6 +13,9 @@ class WhiskeyDetails extends Component {
     render() {
         return (
             <div>
+                <Link to= {'/'}>
+                    <button>Go Back</button>
+                </Link>
                 <p>{this.state.uri}</p>
             </div>
         )

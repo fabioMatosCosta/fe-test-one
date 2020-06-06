@@ -4,7 +4,7 @@ import articles from '../data/articles.json'
 import WhiskeyContainer from '../components/WhiskeyContainer'
 import ArticleContainer from '../components/ArticleContainer'
 import '../styles/Home.css'
-var _ = require('lodash');
+var _ = require('lodash')
 
 
 class Home extends Component {
@@ -61,17 +61,19 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <div>
-                    <h1>WHISKEY SELECTION</h1>
-                </div>
-                <div>
-                    {this.state.regions.map((region, index)=>{
-                        return(
-                            <button key = {index} onClick={this.toggleRegion.bind(this,region)}>{region}</button>
+                <div className="container">
+                    <div>
+                        <h1>WHISKEY SELECTION</h1>
+                    </div>
+                    <div className = "buttons is-centered">
+                        {this.state.regions.map((region, index)=>{
+                            return(
+                                <button className = "button is-rounded" key = {index} onClick={this.toggleRegion.bind(this,region)}>{region}</button>
+                            )}
                         )}
-                    )}
+                    </div>
                 </div>
-                <div>
+                <div className = "columns is-multiline">
                     {this.state.filteredWh.map((w, index)=>{
                         return(
                             <WhiskeyContainer
