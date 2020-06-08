@@ -1,4 +1,10 @@
-#Instructions:
+# About:
+
+
+Technologies used : React | Javascript | Lodash | CSS | HTML | Bulma 
+
+
+## Instructions:
 
 To run the app:
     1.Install the dependencies by running the following command: npm install
