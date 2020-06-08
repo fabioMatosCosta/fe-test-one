@@ -4,6 +4,7 @@ import whiskies from '../data/whiskies.json'
 import '../styles/WhiskeyDetails.css'
 var _ = require('lodash')
 
+
 class WhiskeyDetails extends Component {
     constructor(props) {
         super(props)
@@ -12,7 +13,7 @@ class WhiskeyDetails extends Component {
             uri: this.props.match.params.uri,
             whiskey:{
                 tasting_notes: [],
-                image: ""
+                image: "ardbeg.png"
             }
         }
     }
@@ -70,12 +71,12 @@ class WhiskeyDetails extends Component {
                         </button>
                     </Link>
                 </div>
-                    <div className="columns">
-                        <div className="column">
+                    <div className="columns details">
+                        <div className="column ">
                             <section className = "hero">
                                 <div className = "hero-body">
-                                    <h1 className ="wh-title">{_.capitalize(this.state.whiskey.title)}</h1>
-                                    <h4 className ="is-size-3">{_.capitalize(this.state.whiskey.region)} Region</h4>
+                                    <h1 className ="wh-title has-text-white">{_.capitalize(this.state.whiskey.title)}</h1>
+                                    <h4 className ="region is-size-3">{_.capitalize(this.state.whiskey.region)} Region</h4>
                                     <div className ="nt-container">
                                         <div style = {this.getStyle(this.state.whiskey.region)} className ="wh-notes">
                                             {this.state.whiskey.tasting_notes.map((note, index)=>{
@@ -87,16 +88,16 @@ class WhiskeyDetails extends Component {
                                     </div>
                                 </div>
                             </section>
-                        </div>
-                        <div className="column">
-                            <div className ="bottle">
-                                <img src={require (`../assets/${this.state.whiskey.image}`)} alt={this.props.name}/>
+                            <div className = "buy">
+                                <h3 className = "wh-title has-text-white">${this.state.whiskey.cost}</h3>
+                                <button className = "button is-rounded is-size-4">Buy Now</button>
                             </div>
                         </div>
-                    </div>
-                    <div className = "buy">
-                        <h3 className = "wh-title">${this.state.whiskey.cost}</h3>
-                        <button className = "button is-rounded is-size-4">Buy Now</button>
+                        <div className="column">
+                            <div className ="bottle-img">
+                                <img src={require(`../assets/${this.state.whiskey.image}`)} alt={this.state.whiskey.title}/>
+                            </div>
+                        </div>
                     </div>
             </div>
         )

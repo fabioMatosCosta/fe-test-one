@@ -63,7 +63,7 @@ class Home extends Component {
             <div>
                 <div className="container">
                     <section className = "hero">
-                        <div className = "hero-body">
+                        <div className = "hero-body home-title">
                             <h1 className ="wh-title">WHISKEY SELECTION</h1>
                         </div>
                     </section>

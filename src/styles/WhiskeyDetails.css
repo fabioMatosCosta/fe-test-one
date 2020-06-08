@@ -11,3 +11,24 @@
 .nt-container {
     max-width: 33vw;
 }
+
+
+.bottle-img img{
+    min-width: 160px;
+    max-width: 300px;
+}
+
+.details {
+    background-color:#0f0f0f;
+    background-image: url('../assets/card-bg.svg') ;
+    height: 75vh;
+    width: 90vw;
+}
+
+.navbar {
+    margin-bottom: 30px;
+}
+
+.region {
+    margin: 35px 10px;
+}
