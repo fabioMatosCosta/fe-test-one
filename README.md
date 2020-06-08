@@ -6,9 +6,9 @@ Technologies used : React | Javascript | Lodash | CSS | HTML | Bulma
 
 ## Instructions:
 
-To run the app:
-    1.Install the dependencies by running the following command: `npm install`
-    2.Run the app with the following command: `npm start`
+To run the app:<br />
+    1.Install the dependencies by running the following command: `npm install` <br />
+    2.Run the app with the following command: `npm start`<br />
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
