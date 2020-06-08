@@ -1,3 +1,10 @@
+#Instructions:
+
+To run the app:
+    1.Install the dependencies by running the following command: npm install
+    2.Run the app with the following command: npm start
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
