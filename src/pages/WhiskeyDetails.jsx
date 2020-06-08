@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import whiskies from '../data/whiskies.json'
+import '../styles/WhiskeyDetails.css'
 var _ = require('lodash')
 
 class WhiskeyDetails extends Component {
@@ -9,7 +10,10 @@ class WhiskeyDetails extends Component {
 
         this.state = {
             uri: this.props.match.params.uri,
-            whiskey:{image: ""}
+            whiskey:{
+                tasting_notes: [],
+                image: ""
+            }
         }
     }
 
@@ -18,6 +22,33 @@ class WhiskeyDetails extends Component {
             return whiskey.uri === `/${this.state.uri}`
         })
         return whsk
+    }
+
+    getStyle(region){
+        let style = {}
+        switch(region){
+            case 'islands':
+                style = {'backgroundImage': 'linear-gradient(to right, #D71E44 , #9E1B34)'}
+                break
+            case 'islay':
+                style = {'backgroundImage': 'linear-gradient(to right, #A5238E , #6E2671)'}
+                break
+            case 'highlands':
+                style = {'backgroundImage': 'linear-gradient(to right, #563494 , #322773)'}
+                break
+            case 'lowlands':
+                style = {'backgroundImage': 'linear-gradient(to right, #0663AE , #174272)'}
+                break
+            case 'speyside':
+                style = {'backgroundImage': 'linear-gradient(to right, #1AB467 , #007B46)'}
+                break
+            case 'campbeltown':
+                style = {'backgroundImage': 'linear-gradient(to right, #F3B41B , #D29D2A)'}
+                break
+            default:
+                style = {'backgroundImage': 'linear-gradient(to right, #D71E44 , #9E1B34)'}
+        }
+        return style
     }
 
     componentDidMount(){
@@ -31,15 +62,42 @@ class WhiskeyDetails extends Component {
     render() {
         return (
             <div>
-                <Link to= {'/'}>
-                    <button className="button is-rounded">Go Back</button>
-                </Link>
-                <div className="content">
-                    <h1>{_.capitalize(this.state.whiskey.title)}</h1>
-                    <h4>{_.capitalize(this.state.whiskey.region)} Region</h4>
-                    {/* <img src={require (`../assets/${this.state.whiskey.image}`)} alt={this.state.whiskey.title}/> */}
+                <div className="navbar">
+                    <Link to= {'/'}>
+                        <button className="button is-rounded navbar-item">
+                            <span className="icon" role="img" aria-label="return" >◀️</span>
+                            <span>Go Back</span>
+                        </button>
+                    </Link>
                 </div>
-                <button className= "button is-rounded">Buy Now</button>
+                    <div className="columns">
+                        <div className="column">
+                            <section className = "hero">
+                                <div className = "hero-body">
+                                    <h1 className ="wh-title">{_.capitalize(this.state.whiskey.title)}</h1>
+                                    <h4 className ="is-size-3">{_.capitalize(this.state.whiskey.region)} Region</h4>
+                                    <div className ="nt-container">
+                                        <div style = {this.getStyle(this.state.whiskey.region)} className ="wh-notes">
+                                            {this.state.whiskey.tasting_notes.map((note, index)=>{
+                                                return(
+                                                    <p className="note" key = {index}>{_.capitalize(note)}</p>
+                                                )}
+                                            )}
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div className="column">
+                            <div className ="bottle">
+                                <img src={require (`../assets/${this.state.whiskey.image}`)} alt={this.props.name}/>
+                            </div>
+                        </div>
+                    </div>
+                    <div className = "buy">
+                        <h3 className = "wh-title">${this.state.whiskey.cost}</h3>
+                        <button className = "button is-rounded is-size-4">Buy Now</button>
+                    </div>
             </div>
         )
     }

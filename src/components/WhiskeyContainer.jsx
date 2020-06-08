@@ -5,64 +5,57 @@ var _ = require('lodash')
 
 
 class WhiskeyContainer extends Component {
-    constructor(props) {
-        super(props)
-
-        this.state = {
-
-        }
-    }
 
     getStyle(region){
-        let style = {};
+        let style = {}
         switch(region){
             case 'islands':
-                style = {'backgroundImage': 'linear-gradient(to right, #D71E44 , #9E1B34)'};
-                break;
+                style = {'backgroundImage': 'linear-gradient(to right, #D71E44 , #9E1B34)'}
+                break
             case 'islay':
-                style = {'backgroundImage': 'linear-gradient(to right, #A5238E , #6E2671)'};
-                break;
+                style = {'backgroundImage': 'linear-gradient(to right, #A5238E , #6E2671)'}
+                break
             case 'highlands':
-                style={'backgroundImage': 'linear-gradient(to right, #563494 , #322773)'};
-                break;
+                style = {'backgroundImage': 'linear-gradient(to right, #563494 , #322773)'}
+                break
             case 'lowlands':
-                style={'backgroundImage': 'linear-gradient(to right, #0663AE , #174272)'};
-                break;
+                style = {'backgroundImage': 'linear-gradient(to right, #0663AE , #174272)'}
+                break
             case 'speyside':
-                style={'backgroundImage': 'linear-gradient(to right, #1AB467 , #007B46)'};
-                break;
+                style = {'backgroundImage': 'linear-gradient(to right, #1AB467 , #007B46)'}
+                break
             case 'campbeltown':
-                style={'backgroundImage': 'linear-gradient(to right, #F3B41B , #D29D2A)'};
-                break;
+                style = {'backgroundImage': 'linear-gradient(to right, #F3B41B , #D29D2A)'}
+                break
             default:
-                style={}
+                style = {'backgroundImage': 'linear-gradient(to right, #D71E44 , #9E1B34)'}
         }
         return style
     }
 
     getColor(region){
-        let style = {};
+        let style = {}
         switch(region){
             case 'islands':
-                style = {'border': '2px solid #9E1B34'};
-                break;
-            case'islay':
-                style = {'border': '2px solid #6E2671'};
-                break;
+                style = {'border': '2px solid #9E1B34'}
+                break
+            case 'islay':
+                style = {'border': '2px solid #6E2671'}
+                break
             case 'highlands':
-                style={'border': '2px solid #322773'};
-                break;
+                style = {'border': '2px solid #322773'}
+                break
             case 'lowlands':
-                style={'border': '2px solid #174272'};
-                break;
+                style = {'border': '2px solid #174272'}
+                break
             case 'speyside':
-                style={'border': '2px solid #007B46'};
-                break;
+                style = {'border': '2px solid #007B46'}
+                break
             case 'campbeltown':
-                style={'border': '2px solid #D29D2A'};
-                break;
+                style = {'border': '2px solid #D29D2A'}
+                break
             default:
-                style={}
+                style = {'border': '2px solid #9E1B34'}
         }
         return style
     }

@@ -1,0 +1,13 @@
+.buy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buy > * {
+    padding: 20px 60px;
+}
+
+.nt-container {
+    max-width: 33vw;
+}

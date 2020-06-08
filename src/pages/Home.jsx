@@ -66,7 +66,6 @@ class Home extends Component {
                         <div className = "hero-body">
                             <h1 className ="wh-title">WHISKEY SELECTION</h1>
                         </div>
-
                     </section>
                     <div className = "buttons is-centered">
                         {this.state.regions.map((region, index)=>{
