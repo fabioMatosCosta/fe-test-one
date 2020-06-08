@@ -92,10 +92,8 @@ class WhiskeyDetails extends Component {
                                 <button className = "button is-rounded is-size-4">Buy Now</button>
                             </div>
                         </div>
-                        <div className="column">
-                            <div className ="bottle-img">
-                                <img src={require(`../assets/${this.state.whiskey.image}`)} alt={this.state.whiskey.title}/>
-                            </div>
+                        <div className="column bottle-img">
+                            <img src={require(`../assets/${this.state.whiskey.image}`)} alt={this.state.whiskey.title}/>
                         </div>
                     </div>
             </div>

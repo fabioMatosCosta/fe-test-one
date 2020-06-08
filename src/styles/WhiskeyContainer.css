@@ -15,7 +15,7 @@
     width: 160px;
     position: absolute;
     left: 65%;
-    bottom: -10px;
+    bottom: -2%;
 }
 
 .wh-name {
@@ -49,7 +49,7 @@
     display: inline-flex;
     clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
     height: 60px;
-    border-radius: 10px;
+    border-radius: 20px 10px 20px 10px;
     margin-bottom: 36px;
     background-image: linear-gradient(to right, #D71E44 , #9E1B34);
     align-items: center;
@@ -64,6 +64,7 @@
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
+    padding-right: 36px;
 }
 
 .line {
