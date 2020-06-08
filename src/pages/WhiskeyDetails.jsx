@@ -54,7 +54,6 @@ class WhiskeyDetails extends Component {
 
     componentDidMount(){
         let wh = this.getInfo()
-        console.log(wh)
         this.setState({
             whiskey: wh
         })
